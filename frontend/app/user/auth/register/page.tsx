@@ -37,12 +37,24 @@ export default function RegisterPage() {
                   </div>
                   <div className='grid grid-cols-2 gap-3'>
                     <div className='flex flex-col text-left gap-2'>
-                        <label htmlFor="" className='text-sm font-semibold'>Course</label>
-                        <input type="text" placeholder='BSIT' className='border p-3 rounded-lg'/>
+                        <label htmlFor="course" className='text-sm font-semibold'>Course</label>
+                        <select id="course" name="course" className='border p-3 rounded-lg bg-white'>
+                            <option value="">Select Course</option>
+                            <option value="BSIT">BSIT</option>
+                            <option value="BSHM">BSHM</option>
+                            <option value="BSED">BSED</option>
+                            <option value="BEED">BEED</option>
+                        </select>
                     </div>
                     <div className='flex flex-col text-left gap-2'>
-                        <label htmlFor="" className='text-sm font-semibold'>Year Level</label>
-                        <input type="number" placeholder='1st Year' className='border p-3 rounded-lg' />
+                        <label htmlFor="yearLevel" className='text-sm font-semibold'>Year Level</label>
+                        <select id="yearLevel" name="yearLevel" className='border p-3 rounded-lg bg-white'>
+                            <option value="">Select Year Level</option>
+                            <option value="1st Year">1st Year</option>
+                            <option value="2nd Year">2nd Year</option>
+                            <option value="3rd Year">3rd Year</option>
+                            <option value="4th Year">4th Year</option>
+                        </select>
                     </div>
                   </div>
                   <div className='flex flex-col gap-2 font-semibold'>
