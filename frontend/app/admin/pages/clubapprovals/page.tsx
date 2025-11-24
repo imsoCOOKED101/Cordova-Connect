@@ -1,53 +1,91 @@
-import React from 'react'
-import { ArrowLeft } from 'lucide-react'
+import React from "react";
+import Sidebar from "../../components/layout/Sidebar";
 
-export default function RegisterAdminPage() {
-    return(
-        <div className='text flex justify-center items-center bg-[#E7F1FF] p-20'>
-            <div className='border p-10 bg-[white] flex flex-col gap-5 text-center shadow-2xl rounded-xl text-gray-500 w-[600px]'>
-                <div>
-                    <h1 className='text-blue-600 font-bold text-3xl'>Create an Admin Account</h1>
-                    <p className='text-sm mt-3'>Join the Cordova Connect community</p>
-                </div>
-                
-                <form action="" className='flex flex-col gap-5'>
-                  
-                  <div className='grid grid-cols-1 gap-3'>
-                    <div className='flex flex-col text-left gap-2 font-semibold'>
-                        <label className='text-sm'>Admin Name</label>
-                        <input type="text" placeholder='Juan Dela Cruz' className='border p-3 rounded-lg'/>
-                    </div>
-                  </div>
+function ClubApprovals() {
+  const clubs = [
+    {
+      initial: "B",
+      name: "Banag-banag Cultural Society",
+      desc: "Celebrating Filipino heritage and traditions through cultural activities",
+      leader: "Maria Santos",
+      category: "Community",
+      members: 50,
+    },
+    {
+      initial: "R",
+      name: "Robotics Club",
+      desc: "Building and programming robots for competitions",
+      leader: "John Doe",
+      category: "Technology",
+      members: 30,
+    },
+  ];
 
-                  <div className='flex flex-col text-left gap-2 font-semibold'>
-                    <label className='text-sm'>Email Address</label>
-                    <input type="email" placeholder='your.email@cordova.edu' className='border p-3 rounded-lg'/>
-                  </div>
+  return (
+    <div className="flex">
+      <Sidebar />
 
-                  <div className='grid grid-cols-2 gap-3'>
-                    <div className='flex flex-col text-left gap-2 font-semibold'>
-                        <label className='text-sm'>Password</label>
-                        <input type="password" placeholder='*******' className='border p-3 rounded-lg'/>
-                    </div>
-                    <div className='flex flex-col text-left gap-2 font-semibold'>
-                        <label className='text-sm'>Confirm Password</label>
-                        <input type="password" placeholder='*******' className='border p-3 rounded-lg'/>
-                    </div>
-                  </div>
+      <main className="bg-[#F9FAFB] w-full min-h-screen">
+        <header className="p-5 bg-white font-bold text-xl">
+          <h1>Club Approvals</h1>
+        </header>
 
-                  <div className='flex flex-col gap-2'>
-                    <button className='border bg-blue-500 text-white p-3 rounded-lg'>
-                        Create Account
-                    </button>
-
-                    <div className='flex items-center justify-center'>
-                        <h1 className='text-blue-500 font-semibold flex items-center text-center'>
-                            <ArrowLeft />Back to Login
-                        </h1>
-                    </div>
-                  </div>
-                </form>
-            </div>
+        <div className="p-5">
+          <h1 className="font-bold">Pending Club Applications</h1>
+          <p className="text-sm text-gray-500 mt-2">
+            Review and approve new club applications
+          </p>
         </div>
-    )
+
+        {clubs.map((club, index) => (
+          <div
+            key={index}
+            className="p-5 m-5 bg-white rounded-2xl flex gap-5"
+          >
+            <div className="w-20 h-20 bg-blue-100 rounded-lg flex items-center justify-center">
+              <h1 className="font-bold text-3xl text-blue-500">
+                {club.initial}
+              </h1>
+            </div>
+
+            <div className="flex flex-col w-full">
+              <h1 className="font-bold text-xl">{club.name}</h1>
+              <p className="text-sm text-gray-500 mt-1">{club.desc}</p>
+
+              <div className="flex justify-between mt-4">
+                <div className="flex flex-col">
+                  <h1 className="text-sm text-gray-500">Proposed Leader</h1>
+                  <p className="font-bold mt-1">{club.leader}</p>
+                </div>
+
+                <div className="flex flex-col">
+                  <h1 className="text-sm text-gray-500">Category</h1>
+                  <p className="font-bold mt-1">{club.category}</p>
+                </div>
+
+                <div className="flex flex-col">
+                  <h1 className="text-sm text-gray-500">Expected Members</h1>
+                  <p className="font-bold mt-1">{club.members}</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-3 gap-4 mt-6 w-full">
+                <button className="flex items-center justify-center gap-2 bg-[#16A34A] text-white py-2 rounded-md cursor-pointer hover:bg-green-700 transition">
+                  <span className="">✓</span> Approve Club
+                </button>
+                <button className="flex items-center justify-center gap-2 bg-[#E17100] text-white py-2 rounded-md cursor-pointer hover:bg-orange-700 transition">
+                  <span>🛈︎</span> Request Changes
+                </button>
+                <button className="flex items-center justify-center gap-2 bg-[#DC2626] text-white py-2 rounded-md cursor-pointer hover:bg-red-700 transition">
+                  <span>✕</span> Reject
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </main>
+    </div>
+  );
 }
+
+export default ClubApprovals;
