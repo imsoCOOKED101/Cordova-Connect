@@ -4,7 +4,7 @@ import React from 'react'
 
 function Home() {
   return (
-    <div>Yanalococh</div>
+    <div>Cordiva Connect</div>
   )
 }
 

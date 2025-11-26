@@ -6,7 +6,7 @@ export default function LoginAdminPage() {
             <div className='border p-10 bg-[white] flex flex-col gap-5 text-center shadow-2xl rounded-xl text-gray-500 w-[450px]'>
                 <div>
                     <h1 className='text-blue-600 font-bold text-3xl'>Cordova Connect</h1>
-                    <p className='text-sm mt-3'>Sign in your Admin account</p>
+                    <p className='text-sm mt-3'>Sign in your account</p>
                 </div>
                 
                 <form action="" className='flex flex-col gap-5'>
